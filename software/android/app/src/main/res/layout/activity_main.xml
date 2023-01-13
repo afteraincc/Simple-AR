@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开始"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textIP"
+        app:layout_constraintStart_toStartOf="@+id/textIP"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/switchOverlayPermisson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="悬浮窗口权限"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="权限状态"
+        app:layout_constraintBottom_toTopOf="@+id/switchOverlayPermisson"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/switchWifiStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WIFI热点状态"
+        app:layout_constraintEnd_toEndOf="@+id/switchOverlayPermisson"
+        app:layout_constraintStart_toStartOf="@+id/switchOverlayPermisson"
+        app:layout_constraintTop_toBottomOf="@+id/switchOverlayPermisson" />
+
+    <EditText
+        android:id="@+id/textIP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="192.168."
+        app:layout_constraintEnd_toEndOf="@+id/switchWifiStatus"
+        app:layout_constraintStart_toStartOf="@+id/switchWifiStatus"
+        app:layout_constraintTop_toBottomOf="@+id/switchWifiStatus" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
