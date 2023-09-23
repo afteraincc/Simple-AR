@@ -98,7 +98,12 @@ public class OverlayService extends IntentService {
 
     private void initNotification() {
         Intent intent = new Intent(this, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        PendingIntent pendingIntent;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_MUTABLE);
+        } else {
+            pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        }
         Notification.Builder builder = new Notification.Builder(this.getApplicationContext());
 
         builder.setContentIntent(pendingIntent)
